@@ -12,11 +12,14 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
-os.chdir('../')
-os.chdir('../')
+from os.path import dirname, join
+
+DOCS_ROOT = dirname(__file__)
+PROJECT_ROOT = dirname(DOCS_ROOT)
+
+sys.path.insert(0, PROJECT_ROOT)
+
 # -- Project information -----------------------------------------------------
 
 project = 'metquest'
