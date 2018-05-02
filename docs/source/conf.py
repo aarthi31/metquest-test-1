@@ -170,3 +170,14 @@ texinfo_documents = [
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+def run_apidoc(_):
+    from sphinx.apidoc import main
+
+    mod_path = join(PROJECT_ROOT, 'metquest')
+    auto_path = join(DOCS_ROOT, '_autogen')
+    main([None, '-f', '-d', '2', '-e', '-o', auto_path, mod_path])
+
+
+def setup(app):
+    app.connect('builder-inited', run_apidoc)
