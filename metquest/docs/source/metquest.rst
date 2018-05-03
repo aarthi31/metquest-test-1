@@ -1,19 +1,19 @@
-.. metquest documentation master file, created by
-   sphinx-quickstart on Thu May  3 14:13:02 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. toctree::
+   :caption: Welcome to Metquest's documentation!
+   	MetQuest is a dynamic programming based algorithm for identifying all possible
+	pathways from metabolic networks between the source and the target metabolites. 
+	MetQuest requires the genome-scale metabolic reconstructions,
+	set of seed, source and target metabolites and the pathway length cut-off. 
+	MetQuest is compatible with Python 3 and is OS-independent.  
+   :maxdepth: 2
 
-Welcome to metquest's documentation!
-====================================
+   installing
+
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
+    :numbered:
+    :caption: MetQuest Modules
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+    modules
+    
