@@ -52,7 +52,7 @@ should contain ecoli_core_model fum_c
 ## Running MetQuest
 
 #### From command line
-Navigae to the folder where metquest is installed and type
+Navigate to the folder where metquest is installed and type
 ``` 
 python3 execute_metquest.py <path containing the input folder>
 
