@@ -24,6 +24,7 @@ setup(
     packages=find_packages(),
     install_requires=requirements,
     setup_requires=[],
+    scripts=['bin/metquest.bash'],
     author='Aarthi Ravikrishnan',
     author_email='aarthiravikrishnan@gmail.com',
     description='MetQuest: Enumerating all possible biosynthetic pathways in metabolic networks ',

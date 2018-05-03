@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
 import os
+import sys
 from collections import Counter
 from itertools import combinations
-from .pathway_assembler import find_pathways
-from .construct_graph import create_graph
+from metquest.pathway_assembler import find_pathways
+from metquest.construct_graph import create_graph
 
 
 def write_output_to_file(pathway_table, currenttarmet, cutoff, cyclic_pathways,
@@ -477,12 +478,15 @@ def execute_all_codes():
     Parameters
     ----------
         None
-
     Returns
     -------
         None
     """
-    inputfoldername = input('Enter folder name with all files \n')
+    try:
+        inputfoldername = sys.argv[1]
+    except:
+        inputfoldername = input('Enter folder name with all files \n')
+
     if '~' in inputfoldername:
         inputfoldername = os.path.expanduser(inputfoldername)
     list_of_files = os.listdir(inputfoldername)
