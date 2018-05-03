@@ -1,0 +1,653 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. metquest package &mdash; Metquest 0.1.26 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Installation" href="installing.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="metquest.html" class="icon icon-home"> Metquest
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Welcome to Metquest's documentation!</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MetQuest Modules</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. metquest package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">1.1. Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-metquest.construct_graph">1.2. metquest.construct_graph module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-metquest.execute_metquest">1.3. metquest.execute_metquest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-metquest.fetch_reactions">1.4. metquest.fetch_reactions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-metquest.generate_partitions">1.5. metquest.generate_partitions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-metquest.get_reaction_types">1.6. metquest.get_reaction_types module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-metquest.guided_bfs">1.7. metquest.guided_bfs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-metquest.package_data">1.8. metquest.package_data module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-metquest.pathway_assembler">1.9. metquest.pathway_assembler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-metquest">1.10. Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="metquest.html">Metquest</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="metquest.html">Docs</a> &raquo;</li>
+        
+      <li>1. metquest package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="metquest-package">
+<h1>1. metquest package<a class="headerlink" href="#metquest-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>1.1. Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-metquest.construct_graph">
+<span id="metquest-construct-graph-module"></span><h2>1.2. metquest.construct_graph module<a class="headerlink" href="#module-metquest.construct_graph" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metquest.construct_graph.create_graph">
+<code class="descclassname">metquest.construct_graph.</code><code class="descname">create_graph</code><span class="sig-paren">(</span><em>path_name_with_models</em>, <em>no_of_orgs</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.construct_graph.create_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function creates bipartite graph of the organisms based on the
+path provided and the number of organsisms. For instance, if a folder
+has 3 model files, and the number of organisms is 2, 3 (3C2) different
+bipartite graphs are created. The graph objects and the dictionary
+are saved as gpickle and pickle files respectively.</p>
+<dl class="docutils">
+<dt>path_name_with_models <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Absolute path name of the folder containing the models.</dd>
+<dt>no_of_orgs <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Number of organisms to be used for creating the DiGraph.</dd>
+</dl>
+<dl class="docutils">
+<dt>H <span class="classifier-delimiter">:</span> <span class="classifier">NetworkX DiGraph Object</span></dt>
+<dd>Bipartite graph consisting of internal and exchange reactions in organisms</dd>
+<dt>full_name_map <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary mapping the adhoc reaction names to reaction names in
+the model</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-metquest.execute_metquest">
+<span id="metquest-execute-metquest-module"></span><h2>1.3. metquest.execute_metquest module<a class="headerlink" href="#module-metquest.execute_metquest" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metquest.execute_metquest.execute_all_codes">
+<code class="descclassname">metquest.execute_metquest.</code><code class="descname">execute_all_codes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#metquest.execute_metquest.execute_all_codes" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function executes all the codes including constructing graphs and executing metquest.
+Parameters
+———-</p>
+<blockquote>
+<div>None</div></blockquote>
+<blockquote>
+<div>None</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="metquest.execute_metquest.find_important_reactions">
+<code class="descclassname">metquest.execute_metquest.</code><code class="descname">find_important_reactions</code><span class="sig-paren">(</span><em>all_reactions_involved</em>, <em>currenttarmet</em>, <em>seed_metabolites</em>, <em>namemap</em>, <em>G</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.execute_metquest.find_important_reactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function determines the important reactions based on the pathways
+generated for the target metabolite.</p>
+<dl class="docutils">
+<dt>all_reactions_involved <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>list of all reactions found in all the pathways from source to target</dd>
+<dt>currenttarmet <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Current target metabolite</dd>
+<dt>seed_metabolites <span class="classifier-delimiter">:</span> <span class="classifier">set</span></dt>
+<dd>Set of seed metabolites including the source</dd>
+<dt>namemap <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary mapping the adhoc reaction names to reaction names in
+the model</dd>
+<dt>G <span class="classifier-delimiter">:</span> <span class="classifier">NetworkX DiGraph Object</span></dt>
+<dd>Bipartite graph of the metabolic network</dd>
+</dl>
+<p>None</p>
+<p>We define important reactions as those reactions which occur in almost all
+the pathways producing the target metabolite (apart from the reactions that
+are involved in the production of target metabolite and the uptake of seed
+metabolite)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="metquest.execute_metquest.find_jaccard_between_paths">
+<code class="descclassname">metquest.execute_metquest.</code><code class="descname">find_jaccard_between_paths</code><span class="sig-paren">(</span><em>only_source_to_target</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.execute_metquest.find_jaccard_between_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function determines the jaccard values between the pathways generated
+from the source to the target.</p>
+<dl class="docutils">
+<dt>only_source_to_target <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>list of lists consisting of all pathways producing the target
+metabolite from the source</dd>
+</dl>
+<dl class="docutils">
+<dt>jaccard_values <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>list of all jaccard values (float) for all the pathway combinations</dd>
+<dt>path_combinations <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>list of all pathway combinations corresponding to the jaccard values</dd>
+</dl>
+<p>Jaccard value J = (set(A).intersection(set(B)))/(set(A).union(set(B)))
+J = 1 indicates two sets are the same
+J = 0 indicates two sets are different</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="metquest.execute_metquest.find_pathways_involving_exchange_mets">
+<code class="descclassname">metquest.execute_metquest.</code><code class="descname">find_pathways_involving_exchange_mets</code><span class="sig-paren">(</span><em>number_of_xml</em>, <em>pathway_table</em>, <em>currenttarmet</em>, <em>seed_metabolites</em>, <em>namemap</em>, <em>G</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.execute_metquest.find_pathways_involving_exchange_mets" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function identifies the pathways producing the target metabolites,
+which involve exchange metabolites. This function prints output only when
+a community of organisms is considered, i.e., when more than one metabolic
+network is used.</p>
+<dl class="docutils">
+<dt>number_of_xml <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Number of xml files in the folder</dd>
+<dt>pathway_table <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary of dictionary containing the pathways of different sizes
+identified for every metabolite. This will have only the acyclic/
+branched pathways.</dd>
+<dt>currenttarmet <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Current target metabolite</dd>
+<dt>seed_metabolites <span class="classifier-delimiter">:</span> <span class="classifier">set</span></dt>
+<dd>Set of seed metabolites including the source</dd>
+<dt>namemap <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary mapping the adhoc reaction names to reaction names in
+the model</dd>
+<dt>G <span class="classifier-delimiter">:</span> <span class="classifier">NetworkX DiGraph Object</span></dt>
+<dd>Bipartite graph of the metabolic network</dd>
+</dl>
+<p>None</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="metquest.execute_metquest.find_pathways_starting_from_source">
+<code class="descclassname">metquest.execute_metquest.</code><code class="descname">find_pathways_starting_from_source</code><span class="sig-paren">(</span><em>source_metabolites</em>, <em>pathway_table</em>, <em>currenttarmet</em>, <em>cutoff</em>, <em>G</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.execute_metquest.find_pathways_starting_from_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function finds all pathways starting from the source metabolites</p>
+<dl class="docutils">
+<dt>source_metabolites <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>List of source metabolites</dd>
+<dt>pathway_table <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary of dictionary containing the pathways of different sizes
+identified for every metabolite. This will have only the acyclic/
+branched pathways.</dd>
+<dt>currenttarmet <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Current target metabolite</dd>
+<dt>cutoff <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Maximum pathway length cutoff</dd>
+<dt>G <span class="classifier-delimiter">:</span> <span class="classifier">NetworkX DiGraph Object</span></dt>
+<dd>Bipartite graph of the metabolic network</dd>
+</dl>
+<dl class="docutils">
+<dt>most_different_paths <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>For the given source metabolite, a combination of two most different pathways
+based on minimum Jaccard value is returned.</dd>
+<dt>only_source_to_target <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>list of list containing all pathways starting from source metabolite</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="metquest.execute_metquest.print_summary">
+<code class="descclassname">metquest.execute_metquest.</code><code class="descname">print_summary</code><span class="sig-paren">(</span><em>scope</em>, <em>currenttarmet</em>, <em>pathway_table</em>, <em>cutoff</em>, <em>cyclic_pathways</em>, <em>namemap</em>, <em>source_metabolites</em>, <em>folder_to_create</em>, <em>seed_metabolites</em>, <em>number_of_xml</em>, <em>G</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.execute_metquest.print_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function prints the results summary obtained from the pathways, i.e.,
+1. Number of metabolites in scope
+2. Target metabolite
+3. Pathway size cutoff
+4. Number of all branched pathways found from seed
+5. Number of all branched pathways from seed whose size &lt;= Pathway size cutoff
+6. Minimum number of steps to produce target metabolite
+7. Number of branched pathways from source whose size &lt;= Pathway size cutoff
+8. Target metabolite can be produced using cyclic pathway
+9. Number of cyclic pathways whose size &lt;= Pathway size cutoff
+10. One of the combination of most different pathways producing target metabolite
+11. Important reactions based on the frequency of occurrences</p>
+<dl class="docutils">
+<dt>scope <span class="classifier-delimiter">:</span> <span class="classifier">set</span></dt>
+<dd>Set of metabolites that can be produced from the given set of
+seed metabolites</dd>
+<dt>currenttarmet <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Current target metabolite</dd>
+<dt>pathway_table <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary of dictionary containing the pathways of different sizes
+identified for every metabolite. This will have only the acyclic/
+branched pathways.</dd>
+<dt>cutoff <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Maximum pathway length cutoff</dd>
+<dt>cyclic_pathways <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary of dictionary containing cyclic pathways of different sizes
+identified for every metabolite.</dd>
+<dt>namemap <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary mapping the adhoc reaction names to reaction names in
+the model</dd>
+<dt>source_metabolites <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>List of source metabolites</dd>
+<dt>folder_to_create <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Name of the folder where results have to be written</dd>
+<dt>seed_metabolites <span class="classifier-delimiter">:</span> <span class="classifier">set</span></dt>
+<dd>Set of seed metabolites including the source</dd>
+<dt>number_of_xml <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Number of xml files in the folder</dd>
+<dt>G <span class="classifier-delimiter">:</span> <span class="classifier">NetworkX DiGraph Object</span></dt>
+<dd>Bipartite graph of the metabolic network</dd>
+</dl>
+<p>None</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="metquest.execute_metquest.write_output_to_file">
+<code class="descclassname">metquest.execute_metquest.</code><code class="descname">write_output_to_file</code><span class="sig-paren">(</span><em>pathway_table</em>, <em>currenttarmet</em>, <em>cutoff</em>, <em>cyclic_pathways</em>, <em>folder_to_create</em>, <em>namemap</em>, <em>source_metabolites</em>, <em>G</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.execute_metquest.write_output_to_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function writes the pathways of sizes less than or equal to the
+cutoff from source to the target and seed metabolites to target.
+This function also writes cyclic pathways of sizes less than or equal to
+cutoff from the source to target.</p>
+<dl class="docutils">
+<dt>pathway_table <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary of dictionary containing the pathways of different sizes
+identified for every metabolite. This will have only the acyclic/
+branched pathways.</dd>
+<dt>currenttarmet <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Current target metabolite</dd>
+<dt>cutoff <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Maximum pathway length cutoff</dd>
+<dt>cyclic_pathways <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary of dictionary containing cyclic pathways of different sizes
+identified for every metabolite.</dd>
+<dt>folder_to_create <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Name of the folder where results have to be written</dd>
+<dt>namemap <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary mapping the adhoc reaction names to reaction names in
+the model</dd>
+<dt>source_metabolites <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>List of source metabolites</dd>
+<dt>G <span class="classifier-delimiter">:</span> <span class="classifier">NetworkX DiGraph Object</span></dt>
+<dd>Bipartite graph of the metabolic network</dd>
+</dl>
+<p>None</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-metquest.fetch_reactions">
+<span id="metquest-fetch-reactions-module"></span><h2>1.4. metquest.fetch_reactions module<a class="headerlink" href="#module-metquest.fetch_reactions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metquest.fetch_reactions.segregate_reactions_from_models">
+<code class="descclassname">metquest.fetch_reactions.</code><code class="descname">segregate_reactions_from_models</code><span class="sig-paren">(</span><em>path_name</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.fetch_reactions.segregate_reactions_from_models" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function gets the data pertaining to the reactions and the
+metabolites from the models of multiple organisms.
+This requires as input the pathname where the ‘.xml’ files are located.
+From this path, this function reads all the files using the functions
+in the COBRA toolbox and generates the stoichiometric model for these
+SBML models.</p>
+<dl class="docutils">
+<dt>path_name <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>full path name where the model files are</dd>
+</dl>
+<dl class="docutils">
+<dt>all_organisms_info <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><dl class="first last docutils">
+<dt>Dictionary of all model data (reaction information about all the</dt>
+<dd>organisms)</dd>
+</dl>
+</dd>
+<dt>namemap <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary mapping the adhoc reaction names to reaction names in
+the model</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-metquest.generate_partitions">
+<span id="metquest-generate-partitions-module"></span><h2>1.5. metquest.generate_partitions module<a class="headerlink" href="#module-metquest.generate_partitions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metquest.generate_partitions.generate_partitions">
+<code class="descclassname">metquest.generate_partitions.</code><code class="descname">generate_partitions</code><span class="sig-paren">(</span><em>maximumvalue</em>, <em>lbnumlist</em>, <em>columnvalue</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.generate_partitions.generate_partitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This code takes as input the columnvalue (j), values of the shortest path
+of each of the metabolites (given as a list) and the sum that has to be
+obtained using these combination of numbers.</p>
+<dl class="docutils">
+<dt>maximumvalue <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Maximum values which the numbers can take</dd>
+<dt>lbnumlist <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>a list of values pertaining to the length of shortest paths of
+every metabolite</dd>
+<dt>columnvalue <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Desired sum to be obtained
+All the partitions of numbers which will generate the desired sum
+whose values are between the values for shortest paths and the
+maximum values.</dd>
+</dl>
+<p>all_partitions : List of tuples</p>
+<p>For instance, if the column value is 7, the number of imputs is 2,
+and the shortest path of the metabolites is 4,3 respectively, and the
+maximum sum that has to be obtained is 8, then</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">generate_partitions</span><span class="p">(</span><span class="mi">7</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="mi">8</span><span class="p">)</span>
+<span class="go">[(4, 4), (5, 3)]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">generate_partitions</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">[(2, 1, 2), (2, 2, 1), (3, 1, 1)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-metquest.get_reaction_types">
+<span id="metquest-get-reaction-types-module"></span><h2>1.6. metquest.get_reaction_types module<a class="headerlink" href="#module-metquest.get_reaction_types" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metquest.get_reaction_types.find_different_reaction_types">
+<code class="descclassname">metquest.get_reaction_types.</code><code class="descname">find_different_reaction_types</code><span class="sig-paren">(</span><em>stoi_matrix</em>, <em>model</em>, <em>current_model_name</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.get_reaction_types.find_different_reaction_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function finds the exchange, irreversible and the reversible reactions
+from the model.</p>
+<dl class="docutils">
+<dt>stoi_matrix <span class="classifier-delimiter">:</span> <span class="classifier">numpy array</span></dt>
+<dd>full path name where the model files are</dd>
+<dt>model <span class="classifier-delimiter">:</span> <span class="classifier">COBRA model object</span></dt>
+<dd>COBRA model object created from SBML models</dd>
+<dt>current_model_name <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Name which is to be prefixed against every
+reaction/metabolite (to differentiate the entries in multiple organisms,
+when a community model is built)</dd>
+</dl>
+<dl class="docutils">
+<dt>exchange_met_ids <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>Metabolite identifiers of exchange metabolites</dd>
+<dt>irrev_lhs_nodes <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>Metabolite identifiers of reactants of irreversible reactions</dd>
+<dt>irrev_rhs_nodes <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>Metabolite identifiers of products of irreversible reactions</dd>
+<dt>rev_lhs_nodes <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>Metabolite identifiers of reactants of reversible reactions</dd>
+<dt>rev_rhs_nodes <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>Metabolite identifiers of products of reversible reactions</dd>
+<dt>exchange_rxn_ids <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>Reaction identifers of exchange reactions</dd>
+<dt>irrev_rxn_ids <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>Reaction identifiers of irreversible reactions</dd>
+<dt>rev_rxn_ids <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>Reaction identifiers of reversible reactions</dd>
+</dl>
+<dl class="docutils">
+<dt>Consider a model consisting of four reactions:</dt>
+<dd>a &lt;=&gt;    -1000&lt;v&lt;1000
+&lt;=&gt; b     -1000&lt;v&lt;1000
+a + e &lt;=&gt; f -1000&lt;v&lt;1000
+b + d -&gt; c 0&lt;v&lt;1000,</dd>
+</dl>
+<p>where v denotes the flux through every reaction.
+For this, the stoichiometric matrix S is of the form</p>
+<blockquote>
+<div>S = [[-1,0,0,0,0,0], [0,1,0,0,0,0], [-1,0,0,0,-1,1], [0,-1,1,-1,0,0]]</div></blockquote>
+<p>Firstly, from S, the exchange reactions are found by considering the
+reactions which have a single entry in every list. In this process, the
+bulk metabolites are also considered.
+This list of exchange reactions is removed from the master reaction list,
+denoted as internal_reactions. From this, based on the lower and the upper
+bounds, irreversible and reversible reactions are separated. The LHS and
+the RHS metabolite of these reactions are returned as separate list.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-metquest.guided_bfs">
+<span id="metquest-guided-bfs-module"></span><h2>1.7. metquest.guided_bfs module<a class="headerlink" href="#module-metquest.guided_bfs" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metquest.guided_bfs.forward_pass">
+<code class="descclassname">metquest.guided_bfs.</code><code class="descname">forward_pass</code><span class="sig-paren">(</span><em>graph_object</em>, <em>seedmets</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.guided_bfs.forward_pass" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function carries out the Guided Breadth First Search on a directed
+bipartite graph starting from the entries in seed metabolite set.</p>
+<dl class="docutils">
+<dt>graph_object <span class="classifier-delimiter">:</span> <span class="classifier">NetworkX DiGraph Object</span></dt>
+<dd>Bipartite graph of the metabolic network</dd>
+<dt>seedmets <span class="classifier-delimiter">:</span> <span class="classifier">set</span></dt>
+<dd>Set of seed metabolites including the source</dd>
+</dl>
+<dl class="docutils">
+<dt>lower_bound_metabolite <span class="classifier-delimiter">:</span> <span class="classifier">defaultdict</span></dt>
+<dd>Minimum number of steps required to reach a metabolite</dd>
+<dt>status_dict <span class="classifier-delimiter">:</span> <span class="classifier">defaultdict</span></dt>
+<dd>Dictionary pertaining to the status of every reaction - whether it
+has been visited or not</dd>
+<dt>scope <span class="classifier-delimiter">:</span> <span class="classifier">set</span></dt>
+<dd>Set of metabolites that can be produced from the given set of
+seed metabolites</dd>
+</dl>
+<p>Starting with the set of seed metabolites S, the algorithm first finds
+all the reactions from the set R, whose precursor metabolites are in S.
+Such reactions are marked visited and added to the visited reaction set.
+Metabolites produced by these reactions are checked. The reactions where
+these metabolites participate are then checked for the presence of all its
+predecessors and are added to the queue. This traversal continues in a
+breadth-first manner and stops when there are no further reactions to
+be visited.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-metquest.package_data">
+<span id="metquest-package-data-module"></span><h2>1.8. metquest.package_data module<a class="headerlink" href="#module-metquest.package_data" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-metquest.pathway_assembler">
+<span id="metquest-pathway-assembler-module"></span><h2>1.9. metquest.pathway_assembler module<a class="headerlink" href="#module-metquest.pathway_assembler" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="metquest.pathway_assembler.find_pathways">
+<code class="descclassname">metquest.pathway_assembler.</code><code class="descname">find_pathways</code><span class="sig-paren">(</span><em>G</em>, <em>seed_mets_input</em>, <em>path_len_cutoff</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#metquest.pathway_assembler.find_pathways" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function tries to identify pathways between a set of seed and
+target metabolites of a given size cut-off.</p>
+<dl class="docutils">
+<dt>G <span class="classifier-delimiter">:</span> <span class="classifier">NetworkX Graph Object</span></dt>
+<dd>Bipartite graph of the metabolic network</dd>
+<dt>seed_mets_input <span class="classifier-delimiter">:</span> <span class="classifier">set</span></dt>
+<dd>Set of seed metabolites including the source</dd>
+<dt>path_len_cutoff <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Maxnimum size of the pathways</dd>
+</dl>
+<p>maxnumpath : int
+Used to decide if a particular combination has to be evaluated or not.
+i.e., if the number of pathways produced for two different metabolites
+are higher, for instance, if in the reaction A + B -&gt; C,
+A has 2000 pathways and B has 5 pathways, then C will have 10000 pathways
+at the maximum. If this pathway cutoff (maxnumpath) is 1000,
+this combination will not be evaluated, provided C has been
+already found.
+By default, maxnumpath = 1000</p>
+<dl class="docutils">
+<dt>pathway_table <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary of dictionary containing the pathways of different sizes
+identified for every metabolite. This will have only the acyclic/
+branched pathways.</dd>
+<dt>cyclic_pathways <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>Dictionary of dictionary containing cyclic pathways of different sizes
+identified for every metabolite.</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-metquest">
+<span id="module-contents"></span><h2>1.10. Module contents<a class="headerlink" href="#module-metquest" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="installing.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Aarthi Ravikrishnan.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.26',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
