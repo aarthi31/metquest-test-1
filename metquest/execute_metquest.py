@@ -48,89 +48,90 @@ def write_output_to_file(pathway_table, currenttarmet, cutoff, cyclic_pathways,
     all_pathways_count = []
     path_count = []
     cyclic_pathway_count = []
-    for plen in pathway_table[currenttarmet]:
-        all_pathways_count.append(
-            len(pathway_table[currenttarmet][plen]))
-        if plen <= int(cutoff):
-            path_count.append(
-                len(pathway_table[currenttarmet][plen]))
-    if currenttarmet in cyclic_pathways:
-        for plen in cyclic_pathways[currenttarmet]:
-            if plen <= int(cutoff):
-                cyclic_pathway_count.append(
-                    len(cyclic_pathways[currenttarmet][plen]))
-        cycfname = folder_to_create + 'cyclic_pathways_' + currenttarmet.replace(' ', '') + \
-            '_' + 'leq_plen_' + str(cutoff) + '.txt'
-        pathnumcount = 0
-        with open(cycfname, 'w') as filetowrite:
-            print('\nWriting cyclic pathways to a file')
-            for idx in cyclic_pathways[currenttarmet]:
-                if idx <= int(cutoff):
-                    filetowrite.write('Path length ' +
-                                      str(idx) + '\n')
-                for items in cyclic_pathways[currenttarmet][idx]:
-                    pathnumcount += 1
-                    filetowrite.write(
-                        str(pathnumcount) + '\n')
-                    for entities in list(items):
-                        filetowrite.write(
-                            namemap[entities] + '\t' + ' + '.join(pred(entities)) +
-                            '->' + ' + '.join(succ(entities)))
-                        filetowrite.write('\n')
-                    filetowrite.write('--------------------\n')
+    if currenttarmet in pathway_table:
+	    for plen in pathway_table[currenttarmet]:
+	        all_pathways_count.append(
+	            len(pathway_table[currenttarmet][plen]))
+	        if plen <= int(cutoff):
+	            path_count.append(
+	                len(pathway_table[currenttarmet][plen]))
+	    if currenttarmet in cyclic_pathways:
+	        for plen in cyclic_pathways[currenttarmet]:
+	            if plen <= int(cutoff):
+	                cyclic_pathway_count.append(
+	                    len(cyclic_pathways[currenttarmet][plen]))
+	        cycfname = folder_to_create + 'cyclic_pathways_' + currenttarmet.replace(' ', '') + \
+	            '_' + 'leq_plen_' + str(cutoff) + '.txt'
+	        pathnumcount = 0
+	        with open(cycfname, 'w') as filetowrite:
+	            print('\nWriting cyclic pathways to a file')
+	            for idx in cyclic_pathways[currenttarmet]:
+	                if idx <= int(cutoff):
+	                    filetowrite.write('Path length ' +
+	                                      str(idx) + '\n')
+	                for items in cyclic_pathways[currenttarmet][idx]:
+	                    pathnumcount += 1
+	                    filetowrite.write(
+	                        str(pathnumcount) + '\n')
+	                    for entities in list(items):
+	                        filetowrite.write(
+	                            namemap[entities] + '\t' + ' + '.join(pred(entities)) +
+	                            '->' + ' + '.join(succ(entities)))
+	                        filetowrite.write('\n')
+	                    filetowrite.write('--------------------\n')
 
-    if int(cutoff) in pathway_table[currenttarmet]:
-        for sourcemets in source_metabolites:
-            seedfname = folder_to_create + 'branched_pathways_from_seed_' + \
-                    currenttarmet.replace(' ', '') + \
-                    '_' + 'leq_plen_' + str(cutoff) + '.txt'
-            pathnumcount = 0
-            with open(seedfname, 'w') as filetowrite:
-                print('Writing branched pathways (from seed) to a file')
-                for idx in pathway_table[currenttarmet]:
-                    if idx <= int(cutoff):
-                        filetowrite.write('Path length ' +
-                                          str(idx) + '\n')
-                        for items in pathway_table[currenttarmet][idx]:
-                            pathnumcount += 1
-                            filetowrite.write(
-                                str(pathnumcount) + '\n')
-                            for entities in list(items):
-                                filetowrite.write(
-                                    namemap[entities] + '\t' +
-                                    ' + '.join(pred(entities))
-                                    + '->' + ' + '.join(succ(entities)))
-                                filetowrite.write('\n')
-                            filetowrite.write(
-                                '--------------------\n')
-                        filetowrite.write('--------------------\n')
-            only_source_to_target = []
+	    if int(cutoff) in pathway_table[currenttarmet]:
+	        for sourcemets in source_metabolites:
+	            seedfname = folder_to_create + 'branched_pathways_from_seed_' + \
+	                    currenttarmet.replace(' ', '') + \
+	                    '_' + 'leq_plen_' + str(cutoff) + '.txt'
+	            pathnumcount = 0
+	            with open(seedfname, 'w') as filetowrite:
+	                print('Writing branched pathways (from seed) to a file')
+	                for idx in pathway_table[currenttarmet]:
+	                    if idx <= int(cutoff):
+	                        filetowrite.write('Path length ' +
+	                                          str(idx) + '\n')
+	                        for items in pathway_table[currenttarmet][idx]:
+	                            pathnumcount += 1
+	                            filetowrite.write(
+	                                str(pathnumcount) + '\n')
+	                            for entities in list(items):
+	                                filetowrite.write(
+	                                    namemap[entities] + '\t' +
+	                                    ' + '.join(pred(entities))
+	                                    + '->' + ' + '.join(succ(entities)))
+	                                filetowrite.write('\n')
+	                            filetowrite.write(
+	                                '--------------------\n')
+	                        filetowrite.write('--------------------\n')
+	            only_source_to_target = []
 
-            for sourcemets in source_metabolites:
-                for idx in pathway_table[currenttarmet]:
-                    if idx <= int(cutoff):
-                        for items in pathway_table[currenttarmet][idx]:
-                            if set(succ(sourcemets)).intersection(items):
-                                only_source_to_target.append(
-                                    list(items))
-                if only_source_to_target:
-                    sourcefname = folder_to_create + 'branched_pathways_from_source_' + \
-                                currenttarmet.replace(' ', '') + \
-                                '_' + 'leq_plen_' + str(cutoff) + '.txt'
+	            for sourcemets in source_metabolites:
+	                for idx in pathway_table[currenttarmet]:
+	                    if idx <= int(cutoff):
+	                        for items in pathway_table[currenttarmet][idx]:
+	                            if set(succ(sourcemets)).intersection(items):
+	                                only_source_to_target.append(
+	                                    list(items))
+	                if only_source_to_target:
+	                    sourcefname = folder_to_create + 'branched_pathways_from_source_' + \
+	                                currenttarmet.replace(' ', '') + \
+	                                '_' + 'leq_plen_' + str(cutoff) + '.txt'
 
-                    with open(sourcefname, 'w') as filetowrite:
-                        print('Writing branched pathways (from source) to a file \n')
-                        for currentidx, listentries in enumerate(only_source_to_target):
-                            filetowrite.write(str(currentidx+1) + '\n')
-                            filetowrite.write('Path length ' +
-                                              str(len(listentries)) + '\n')
-                            for entities in listentries:
-                                filetowrite.write(
-                                    namemap[entities] + '\t' +
-                                    ' + '.join(pred(entities))
-                                    + '->' + ' + '.join(succ(entities)))
-                                filetowrite.write('\n')
-                            filetowrite.write('--------------------\n')
+	                    with open(sourcefname, 'w') as filetowrite:
+	                        print('Writing branched pathways (from source) to a file \n')
+	                        for currentidx, listentries in enumerate(only_source_to_target):
+	                            filetowrite.write(str(currentidx+1) + '\n')
+	                            filetowrite.write('Path length ' +
+	                                              str(len(listentries)) + '\n')
+	                            for entities in listentries:
+	                                filetowrite.write(
+	                                    namemap[entities] + '\t' +
+	                                    ' + '.join(pred(entities))
+	                                    + '->' + ' + '.join(succ(entities)))
+	                                filetowrite.write('\n')
+	                            filetowrite.write('--------------------\n')
 
 
 def find_pathways_starting_from_source(source_metabolites, pathway_table, currenttarmet, cutoff, G):
@@ -171,7 +172,8 @@ def find_pathways_starting_from_source(source_metabolites, pathway_table, curren
                     if set(succ(sourcemets)).intersection(items):
                         only_source_to_target.append(
                             list(items))
-        if only_source_to_target:
+        if len(only_source_to_target) > 1: 
+            # Sometimes there can be only one pathway producing target
             # To find most different paths from source
             j_value, rxn_comb = find_jaccard_between_paths(
                 only_source_to_target)
@@ -245,15 +247,15 @@ def print_summary(scope, currenttarmet, pathway_table, cutoff, cyclic_pathways, 
     print('Number of metabolites in scope : ', len(scope))
     print('Target metabolite : ', currenttarmet)
     print('Pathway size cutoff : ', str(cutoff))
-    for plen in pathway_table[currenttarmet]:
-        all_pathways_count.append(
-            len(pathway_table[currenttarmet][plen]))
-        if plen <= int(cutoff):
-            path_count.append(
-                len(pathway_table[currenttarmet][plen]))
-    print('Number of all branched pathways found from seed', ':', sum(all_pathways_count))
-    print('Number of all branched pathways from seed whose size <=', cutoff, ':', sum(path_count))
     if currenttarmet in pathway_table:
+        for plen in pathway_table[currenttarmet]:
+            all_pathways_count.append(
+                len(pathway_table[currenttarmet][plen]))
+            if plen <= int(cutoff):
+                path_count.append(
+                    len(pathway_table[currenttarmet][plen]))
+        print('Number of all branched pathways found from seed', ':', sum(all_pathways_count))
+        print('Number of all branched pathways from seed whose size <=', cutoff, ':', sum(path_count))
         minsteps = min(pathway_table[currenttarmet])
         print('Minimum number of steps to produce ',
               currenttarmet, ' : ', int(minsteps))
@@ -298,7 +300,7 @@ def print_summary(scope, currenttarmet, pathway_table, cutoff, cyclic_pathways, 
                               ' + '.join(list(succ(rxns))))
                     print('\n')
         else:
-            print('No pathways starting from source')
+            print('No/only one pathway starting from source')
             print('Two most different paths from source : None')
         find_important_reactions(all_reactions_involved, currenttarmet, seed_metabolites, namemap, G)
     else:
@@ -480,7 +482,7 @@ def execute_all_codes():
     -------
         None
     """
-    inputfoldername = input('Enter folder name with all files')
+    inputfoldername = input('Enter folder name with all files \n')
     if '~' in inputfoldername:
         inputfoldername = os.path.expanduser(inputfoldername)
     list_of_files = os.listdir(inputfoldername)

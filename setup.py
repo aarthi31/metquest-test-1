@@ -6,7 +6,7 @@ requirements = [
     'numpy',
     'scipy',
     'networkx>=2.1',
-    'python-libsbml>=5.16.0',
+    'python-libsbml',
 ]
 
 try:
@@ -20,11 +20,10 @@ datafiles = [(d, [os.path.join(d,f) for f in files])
 
 setup(
     name='metquest',
-    version='0.1.22',
+    version='0.1.25',
     packages=find_packages(),
     install_requires=requirements,
     setup_requires=[],
-    python_requires='>=3',
     author='Aarthi Ravikrishnan',
     author_email='aarthiravikrishnan@gmail.com',
     description='MetQuest: Enumerating all possible biosynthetic pathways in metabolic networks ',
