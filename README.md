@@ -22,6 +22,13 @@ Use pip3 to install metquest from
 python setup.py install
 ```
 
+## Required python packages
+
+1. cobra >= 0.11.3
+2. numpy >= 1.14.3
+3. scipy
+4. python-libsbml
+5. networkx >= 2.1
 
 ## Input
 
