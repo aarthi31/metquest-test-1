@@ -3,7 +3,7 @@ MANIFEST.in
 README.md
 setup.cfg
 setup.py
-bin/run_metquest.bash
+bin/metquest.sh
 metquest/__init__.py
 metquest/construct_graph.py
 metquest/execute_metquest.py

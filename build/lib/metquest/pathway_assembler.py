@@ -7,8 +7,8 @@ import itertools
 from time import clock
 from numpy import prod
 from networkx import get_node_attributes
-from .guided_bfs import forward_pass
-from .generate_partitions import generate_partitions
+from metquest.guided_bfs import forward_pass
+from metquest.generate_partitions import generate_partitions
 
 
 def find_pathways(G, seed_mets_input, path_len_cutoff, *args):
@@ -23,19 +23,16 @@ def find_pathways(G, seed_mets_input, path_len_cutoff, *args):
     seed_mets_input : set
         Set of seed metabolites including the source
     path_len_cutoff : int
-        Maxnimum size of the pathways
-
-    Optional Input
-    --------------
-    maxnumpath : int
-    Used to decide if a particular combination has to be evaluated or not.
-    i.e., if the number of pathways produced for two different metabolites
-    are higher, for instance, if in the reaction A + B -> C,
-    A has 2000 pathways and B has 5 pathways, then C will have 10000 pathways
-    at the maximum. If this pathway cutoff (maxnumpath) is 1000,
-    this combination will not be evaluated, provided C has been
-    already found.
-    By default, maxnumpath = 1000
+        Maximum size of the pathways  
+    *args
+        Used to decide if a particular combination has to be evaluated or not.
+        i.e., if the number of pathways produced for two different metabolites
+        are higher, for instance, if in the reaction A + B -> C,
+        A has 2000 pathways and B has 5 pathways, then C will have 10000 pathways
+        at the maximum. If this pathway cutoff (maxnumpath) is 1000,
+        this combination will not be evaluated, provided C has been
+        already found.
+        By default, it is set to 1000
 
     Returns
     -------

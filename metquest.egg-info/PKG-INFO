@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: metquest
-Version: 0.1.25
+Version: 0.1.27
 Summary: MetQuest: Enumerating all possible biosynthetic pathways in metabolic networks 
 Home-page: UNKNOWN
 Author: Aarthi Ravikrishnan
@@ -60,7 +60,7 @@ Description: # MetQuest
         ## Running MetQuest
         
         #### From command line
-        Navigae to the folder where metquest is installed and type
+        Navigate to the folder where metquest is installed and type
         ``` 
         python3 execute_metquest.py <path containing the input folder>
         

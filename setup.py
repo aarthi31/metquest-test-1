@@ -20,11 +20,11 @@ datafiles = [(d, [os.path.join(d,f) for f in files])
 
 setup(
     name='metquest',
-    version='0.1.25',
+    version='0.1.27',
     packages=find_packages(),
     install_requires=requirements,
     setup_requires=[],
-    scripts=['bin/metquest.bash'],
+    scripts=['bin/metquest.sh'],
     author='Aarthi Ravikrishnan',
     author_email='aarthiravikrishnan@gmail.com',
     description='MetQuest: Enumerating all possible biosynthetic pathways in metabolic networks ',

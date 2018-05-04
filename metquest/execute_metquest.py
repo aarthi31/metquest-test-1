@@ -475,12 +475,15 @@ def find_jaccard_between_paths(only_source_to_target):
 def execute_all_codes():
     """
     This function executes all the codes including constructing graphs and executing metquest.
+    
     Parameters
     ----------
-        None
+    None
+    
     Returns
     -------
-        None
+    None
+    
     """
     try:
         inputfoldername = sys.argv[1]

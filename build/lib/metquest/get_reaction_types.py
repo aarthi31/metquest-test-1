@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import absolute_import
+
 import numpy as np
 
 
@@ -37,23 +39,6 @@ def find_different_reaction_types(stoi_matrix, model, current_model_name):
     rev_rxn_ids : list
         Reaction identifiers of reversible reactions
 
-    Notes
-    -----
-    Consider a model consisting of four reactions:
-        a <=>    -1000<v<1000
-        <=> b     -1000<v<1000
-        a + e <=> f -1000<v<1000
-        b + d -> c 0<v<1000,
-    where v denotes the flux through every reaction.
-    For this, the stoichiometric matrix S is of the form
-        S = [[-1,0,0,0,0,0], [0,1,0,0,0,0], [-1,0,0,0,-1,1], [0,-1,1,-1,0,0]]
-    Firstly, from S, the exchange reactions are found by considering the
-    reactions which have a single entry in every list. In this process, the
-    bulk metabolites are also considered.
-    This list of exchange reactions is removed from the master reaction list,
-    denoted as internal_reactions. From this, based on the lower and the upper
-    bounds, irreversible and reversible reactions are separated. The LHS and
-    the RHS metabolite of these reactions are returned as separate list.
     """
 
     xdim = np.shape(stoi_matrix)

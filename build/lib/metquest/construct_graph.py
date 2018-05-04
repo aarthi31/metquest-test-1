@@ -7,7 +7,7 @@ import itertools
 import sys
 from pickle import dump
 import networkx as nx
-from . import fetch_reactions
+from metquest import fetch_reactions
 
 
 def _create_graph_with_internal_reaction(organismsdata):
