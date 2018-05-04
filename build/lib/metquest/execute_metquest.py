@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
 import os
+import sys
 from collections import Counter
 from itertools import combinations
-from .pathway_assembler import find_pathways
-from .construct_graph import create_graph
+from metquest.pathway_assembler import find_pathways
+from metquest.construct_graph import create_graph
 
 
 def write_output_to_file(pathway_table, currenttarmet, cutoff, cyclic_pathways,
@@ -471,18 +472,24 @@ def find_jaccard_between_paths(only_source_to_target):
     return jaccard_values, path_combinations
 
 
-def execute_all_codes(inputfoldername):
+def execute_all_codes():
     """
     This function executes all the codes including constructing graphs and executing metquest.
+    
     Parameters
     ----------
-        inputfoldername : str
-            Path pertaining to the folder containing the necessary files.
-
+    None
+    
     Returns
     -------
-        None
+    None
+    
     """
+    try:
+        inputfoldername = sys.argv[1]
+    except:
+        inputfoldername = input('Enter folder name with all files \n')
+
     if '~' in inputfoldername:
         inputfoldername = os.path.expanduser(inputfoldername)
     list_of_files = os.listdir(inputfoldername)
@@ -546,10 +553,3 @@ def execute_all_codes(inputfoldername):
                                              namemap, source_metabolites, G)
                 print('\n')
             os.chdir('../')
-
-if __name__ == '__main__':
-    try:
-        inputfoldername = sys.argv[1]
-    except:
-        inputfoldername = input('Enter folder name with all files \n')
- 

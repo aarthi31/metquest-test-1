@@ -5,7 +5,7 @@ from __future__ import absolute_import
 import os
 import glob
 import cobra
-from .get_reaction_types import find_different_reaction_types
+from metquest.get_reaction_types import find_different_reaction_types
 
 
 def segregate_reactions_from_models(path_name):
@@ -26,7 +26,7 @@ def segregate_reactions_from_models(path_name):
     -------
     all_organisms_info : dict
         Dictionary of all model data (reaction information about all the
-                                      organisms)
+        organisms)
     namemap : dict
         Dictionary mapping the adhoc reaction names to reaction names in
         the model
